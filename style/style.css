@@ -1,0 +1,435 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* a {
+    text-decoration: none;
+}
+
+/* Font definitions and variables initialisation */
+@font-face {
+    font-family: 'biko';
+    src: url(../font/Cloud-Regular.otf);
+}
+
+@font-face {
+    font-family: 'arcade';
+    src: url(../font/arcade.ttf);
+}
+
+:root {
+    --primary-black: #121519;
+    --primary-dark: #222831;
+    --navbar-color: #1B1F26;
+    --primary-medium: #30475E;
+    --primary-popColor: #28b6b1;
+    --popColor-dark: #1b7874;
+    --primary-light: #fcf9ed;
+}
+
+html, body{
+    overflow-x: hidden !important;
+    font-family: 'biko' !important;
+
+
+}
+
+
+
+[data-index] img,
+[data-index] .game-name {
+    cursor: pointer;
+}
+
+.play-btn {
+    background-color: var(--primary-popColor);
+    color: var(--primary-light);
+    text-transform: capitalize;
+}
+
+.play-btn:hover {
+    background-color: var(--popColor-dark);
+}
+
+.section-header {
+    width: fit-content;
+    padding: 0.3rem 1rem;
+    font-size: 1.4rem;
+    border-radius: 50px;
+    color: var(--primary-light);
+    text-transform: capitalize;
+    font-family: 'arcade';
+    letter-spacing: 3px;
+    margin: 2rem 0;
+    border: var(--primary-light) 1px solid;
+}
+
+/* ------------------------------------------------------------------- */
+.navbar {
+    background-color: var(--navbar-color);
+    color: var(--primary-light);
+    text-transform: capitalize;
+    padding: 1rem;
+    width: 100vw;
+}
+.navbar-brand, .heading-section{
+    font-family: 'arcade' !important;
+}
+.navbar-toggler{
+    background-color: var(--primary-medium);
+    color: var(--primary-light);
+}
+
+.dropdown-item {
+    width: fit-content;
+    font-family: 'biko';
+    position: relative;
+}
+
+.dropdown-item::after, .dropdown-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-light);
+    transition: width 0.3s;
+    font-weight: bolder;
+}
+
+.dropdown-item:hover::after,
+.dropdown-item.active::after  {
+    width: 100%;
+}
+.dropdown-item.active::after  {
+    background-color: #73c8c5;
+}
+.dropdown-item.active{
+    color:  #73c8c5;
+font-weight: bolder;
+transform: scale(1.1);
+}
+
+main {
+    color: var(--primary-light);
+    position: relative;
+    height: fit-content;
+    
+    background-image: url('../images/background.png');
+    background-color: var(--primary-dark);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-blend-mode: multiply;
+}
+
+#main-content {
+    margin-left: 25%;
+    font-family: 'biko';
+}
+
+
+
+/* sidebar */
+.sidebar {
+    background-color: #1B1F2690;
+    padding-right: 2rem;
+    left: 0;
+}
+
+.sidebar>i {
+    top: 50vh;
+    right: -10px;
+    cursor: pointer;
+    transform: scale(2);
+}
+
+.sidebar ul {
+    padding: 0;
+}
+
+.sidebar-card {
+    background-color: #fcf9ed10;
+    padding: 1rem 0.2rem 1rem 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.sidebar-card a {
+    color: var(--primary-light);
+}
+
+.game-name {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.fa-heart {
+    cursor: pointer;
+}
+
+.fa-solid.fa-heart {
+    color: red;
+}
+
+.saved-games .row {
+    background-color: #fcf9ed10;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+
+
+/* popular games carousel */
+.popular-game-carousel .row {
+    width: fit-content;
+    height: fit-content;
+}
+
+.popular-game-carousel .row>* {
+    background-color: #22283170;
+    color: var(--primary-light);
+    /* font-family: righteous; */
+}
+
+.popular-games figcaption {
+    font-size: 0.9rem;
+}
+
+
+/* all games section  */
+.allGames-card.show {
+    display: block;
+}
+
+.allGames-card.hide {
+    display: none;
+}
+
+.pagination {
+    margin-top: 2rem;
+}
+
+.page-item a {
+    background-color: var(--primary-medium);
+    outline-color: var(--primary-light);
+    border: var(--primary-light);
+    color: var(--primary-light);
+}
+
+.page-item a:hover {
+    background-color: var(--popColor-dark);
+    color: var(--primary-light);
+}
+
+.page-item.active a {
+    background-color: var(--primary-popColor) !important;
+}
+
+
+
+
+/* gam details overlay section  */
+#gameDetails {
+    background-color: var(--navbar-color);
+    transition: opacity 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+#gameDetails .container {
+    padding: 3rem;
+}
+
+.fa-multiply {
+    font-size: 2rem;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    color: var(--primary-light);
+}
+
+.hideBox {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    /* Add a smooth transition for opacity */
+    /* Add any other styles you need for the hidden state */
+}
+
+.showBox {
+    opacity: 1;
+    pointer-events: auto;
+    /* Add any other styles you need for the visible state */
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 992px) {
+    .popular-game-carousel .row {
+        width: 100% !important;
+    }
+    .popular-game-carousel figure {
+        margin: auto;
+    }
+
+    .popular-game-carousel .col-md-6 {
+        padding-block: 1rem;
+    }
+    #popular-games > div.swiper-slide.swiper-slide-active > div > div.col-md-6.col-lg-8.p-2.d-md-flex.align-items-md-center.justify-content-center{
+        width: fit-content;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .popular-game-carousel figure {
+        margin: auto !important;
+    }
+
+    #newGames{
+        margin-top: -6rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .search-bar {
+        width: 45% !important;
+    }
+
+    .sidebar {
+        background-color: #1B1F26;
+        left: -95%;
+    }
+
+    .sidebar>i {
+        right: 10px;
+    }
+
+    #main-content {
+        margin-left: 5% !important;
+        width: 95% !important;
+    }
+
+    #gameDetails{
+        min-height: fit-content !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    html{
+        font-size: 14px;
+    }
+    .favicon{
+        display: none;
+    }
+    
+    .search-bar {
+        width: 45% !important;
+    }
+
+    .sidebar {
+        background-color: #1B1F26;
+
+    }
+
+    #main-content {
+        margin-left: 5% !important;
+        width: 95% !important;
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+
+.loading {
+    background-color: #1b7874;
+    height: 100vh;
+    width: 100vw;
+}
+
+.loader {
+    width: fit-content;
+    font-size: 17px;
+    font-family: monospace;
+    line-height: 1.4;
+    font-weight: bold;
+    background:
+        linear-gradient(#000 0 0) left,
+        linear-gradient(#000 0 0) right;
+    background-repeat: no-repeat;
+    border-right: 5px solid #0000;
+    border-left: 5px solid #0000;
+    background-origin: border-box;
+    position: relative;
+    animation: l9-0 1.5s infinite;
+}
+
+.loader::before {
+    content: "Loading";
+}
+
+.loader::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 22px;
+    height: 60px;
+    background:
+        linear-gradient(90deg, #000 4px, #0000 0 calc(100% - 4px), #000 0) bottom /22px 20px,
+        linear-gradient(90deg, red 4px, #0000 0 calc(100% - 4px), red 0) bottom 10px left 0/22px 6px,
+        linear-gradient(#000 0 0) bottom 3px left 0 /22px 8px,
+        linear-gradient(#000 0 0) bottom 0 left 50%/8px 16px;
+    background-repeat: no-repeat;
+    animation: l9-1 2s infinite;
+}
+
+@keyframes l9-0 {
+
+    0%,
+    25% {
+        background-size: 50% 100%
+    }
+
+    25.1%,
+    75% {
+        background-size: 0 0, 50% 100%
+    }
+
+    75.1%,
+    100% {
+        background-size: 0 0, 0 0
+    }
+}
+
+@keyframes l9-1 {
+    25% {
+        background-position: bottom, bottom 54px left 0, bottom 3px left 0, bottom 0 left 50%;
+        left: 0
+    }
+
+    25.1% {
+        background-position: bottom, bottom 10px left 0, bottom 3px left 0, bottom 0 left 50%;
+        left: 0
+    }
+
+    50% {
+        background-position: bottom, bottom 10px left 0, bottom 3px left 0, bottom 0 left 50%;
+        left: calc(100% - 22px)
+    }
+
+    75% {
+        background-position: bottom, bottom 54px left 0, bottom 3px left 0, bottom 0 left 50%;
+        left: calc(100% - 22px)
+    }
+
+    75.1% {
+        background-position: bottom, bottom 10px left 0, bottom 3px left 0, bottom 0 left 50%;
+        left: calc(100% - 22px)
+    }
+}
